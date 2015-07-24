@@ -1,0 +1,7 @@
+name             'smf-helpers'
+maintainer       'Wanelo'
+maintainer_email 'ops@wanelo.com'
+license          'MIT'
+description      'Installs/Configures smf-helpers'
+long_description 'Installs/Configures smf-helpers'
+version          '0.1.0'

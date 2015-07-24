@@ -1,0 +1,14 @@
+#!/bin/env ruby
+
+jobs = `svcs -a | grep maintenance`.split("\n").map do |job|
+  match = job.match(/svc:(.*)$/)
+end.compact
+
+jobs.each do |job|
+  log_path = %x(svcs -L #{job}).strip
+  if File.exists?(log_path)
+    log = `tail -n50 #{log_path}`
+
+    `svcadm clear #{job}`
+  end
+end
